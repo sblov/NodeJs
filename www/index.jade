@@ -1,0 +1,25 @@
+doctype
+html
+	head
+		meta(chrset='utf-8')
+		title jade_index
+		style.
+			div{
+				width: 100px;
+				height: 100px;
+				background: #ccc;
+				text-align: center;
+				lint-height: 100px;
+				float: left;
+				margin: 10px auto
+			}
+			div.last{
+				clear: left
+			}
+	body
+		-var a=0;
+		while a<12
+			if(a%4==0 && a!=0)
+				div.last=a++
+			else
+				div=a++

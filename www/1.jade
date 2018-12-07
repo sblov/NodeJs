@@ -1,0 +1,39 @@
+html
+	head
+		style
+		script(src="a.js")
+		link(href="a.ss" ,ref="stylesheet")
+		script alert('jade');
+	body
+		div!=content
+		-for(var i=0;i<cla.length;i++)
+			div=cla[i]
+		div(style=json)
+			- var classes = ['foo', 'bar', 'baz']
+			a(class=classes)
+			a(class=cla)
+			a=a
+		div myName:#{name+a}
+		div
+			ul
+				li lov_1
+					a a_lov
+				li lov_2
+				li lov_3
+		div(style="width:200px;height:200px;background:red")
+		div(style={width: '200px',height: '200px',background: 'red'})
+		div(class="aa bb cc")
+		div(class=['aa','bb','cc'])
+		div.content
+		div#content
+		div&attributes({title: 't1',id: 'i1'})
+		div
+			|1
+			|2
+			|3
+		div.
+			1
+			2
+			3
+		div
+			include 1.ejs

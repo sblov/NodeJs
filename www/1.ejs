@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<%= msg %>
+	<%= json.arr[0].user %>
+	<% for(var i =0;i<json.arr.length;i++){ %>
+		<a><%= json.arr[i].user %></a>
+	<% } %>
+	<%- htm %>
+	
+	<% include login.html %>
+</body>
+</html>
