@@ -1,0 +1,59 @@
+首页
+	banner （banner_table)
+		id
+		title			varchar(32)
+		description		varchar(300)
+		href			varchar(300)
+	产品介绍(intro_table)
+		id
+		title			varchar(32)
+		description		varchar(300)
+		href			varchar(300)
+
+	用户评价(custom_evaluation_table)
+		id
+		title			varchar(32)
+		description		varchar(200)
+		src				varchar(300)
+
+技术(new_table) 
+	id
+	title 			varchar(100)
+	summary			varchar(500)
+	href			varchar(300)
+	ico_src 		varchar(300)
+	big_pic_src		varchar(300)
+	content			text
+blog(blog_table)
+	id
+	title			varchar(100)
+	pic_src 		varchar(300)
+	pic_big_src		varchar(300)
+	summary			varchar(500)
+	content			text
+	post_time		timestamp
+	author			varchar(32)
+	n_view			int
+联系
+	(contact_table)
+		id				
+		street			varchar(50)
+		phone			varchar(20)
+		fax				varchar(20)
+		email			varchar(64)
+		weibo			varchar(40)
+		wx				varchar(40)
+		map?			?
+
+	(msg_table)
+		id
+		name			varchar(16)
+		email			varchar(64)
+		phone			varchar(20)
+		subject			text
+关于我们(aboutus_table)
+	id
+	title			varchar(200)
+	content			text
+	pic_src 		varchar(300)
+	href			varchar(300)
