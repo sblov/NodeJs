@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Banners</title>
+</head>
+<body>
+	<div class="page">
+		<% include components/top.inc.ejs %>
+		<div class="content-wrap">
+			<h2>Banners-setting</h2>
+			<div class="form">
+				<form action="?" method="post">
+					title:<input type="text" name="title"><br>
+					descr:<textarea name="description"></textarea><br>
+					href :<input type="text" name="href"><br>
+					<input type="submit" value="Add">
+				</form>
+			</div>
+			<div class="table">
+				<table border="1px" >
+					<thead>
+						<tr>
+							<td>id</td>
+							<td>title</td>
+							<td>description</td>
+							<td>href</td>
+							<td>todo</td>
+						</tr>
+					</thead>
+					<tbody>
+						<% for(var i=0;i < banners.length;i++){ %>
+						<tr>
+							<td><%= banners[i].id %></td>
+							<td><%= banners[i].title %></td>
+							<td><%= banners[i].description %></td>
+							<td><%= banners[i].href %></td>
+							<td>
+								<a href="?act=mod&id=<%= banners[i].id %>">modify</a>
+								<a href="?act=del&id=<%= banners[i].id %>" onclick="return confirm('delete?')">delete</a>
+							</td>
+						</tr>
+						<% } %>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
