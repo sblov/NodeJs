@@ -3,14 +3,39 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Login</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="login-dialog">
-		<form action="/admin/login" method="post">
-			用户：<input type="text" name="username" /><br>
-			密码：<input type="password" name="password" /><br>
-			<input type="submit" value="login">
-		</form>
+
+	<div class="login-dialog container">
+		<div class="col-xs-offset-3 col-xs-6">
+			<hr>
+			<form action="/admin/login" method="post" role="form" class="form-horizontal">
+				<div class="form-group">
+					<label for="username" class="col-xs-2  control-label ">用户：</label>
+					<div class="col-xs-10">
+						<input type="text" name="username" class="form-control" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="password" class="col-xs-2 control-label">密码：</label>
+					<div class="col-xs-10">
+						<input type="password" name="password" class="form-control" />
+					</div>
+
+				</div>
+				<div class="form-group">
+			    	<div class="col-sm-offset-2 col-sm-10">
+			     		 <button class="btn btn-default" type="submit">login</button>
+			   		 </div>
+			 	</div>
+				
+			</form>
+		</div>
+			
+		
 	</div>
 </body>
 </html>

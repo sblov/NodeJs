@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Banners</title>
+	<title>Custom</title>
 	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -11,9 +11,9 @@
 	<div class="container page">
 		<% include components/top.inc.ejs %>
 		<div class="content-wrap">
-			<h2 class="col-xs-offset-5">Banners-setting</h2>
+			<h2 class="col-xs-offset-5">Custom-setting</h2>
 			<div class="form col-xs-offset-2 col-xs-8">
-				<form action="?" method="post" class="form-horizontal" role="form">
+				<form action="?" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="title" class="col-xs-2 control-label">title</label>
 						<div class="col-xs-10">
@@ -27,9 +27,9 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="href" class="col-xs-2 control-label">href</label>
+						<label for="src" class="col-xs-2 control-label">src</label>
 						<div class="col-xs-10">
-							<input type="text" name="href" class="form-control">
+							<input type="file" name="src" class="form-control">
 						</div>
 					</div>
 					<div class="form-group">
@@ -46,20 +46,20 @@
 							<td>id</td>
 							<td>title</td>
 							<td>description</td>
-							<td>href</td>
+							<td>src</td>
 							<td>todo</td>
 						</tr>
 					</thead>
 					<tbody>
-						<% for(var i=0;i < banners.length;i++){ %>
+						<% for(var i=0;i < custom.length;i++){ %>
 						<tr class="active">
-							<td><%= banners[i].id %></td>
-							<td><%= banners[i].title %></td>
-							<td><%= banners[i].description %></td>
-							<td><%= banners[i].href %></td>
+							<td><%= custom[i].id %></td>
+							<td><%= custom[i].title %></td>
+							<td><%= custom[i].description %></td>
+							<td><img src="/upload/<%= custom[i].src %>" /></td>
 							<td>
-								<a href="?act=mod&id=<%= banners[i].id %>" class="btn btn-success">modify</a>
-								<a href="?act=del&id=<%= banners[i].id %>" onclick="return confirm('delete?')" class="btn btn-danger">delete</a>
+								<a href="?act=mod&id=<%= custom[i].id %>" class="btn btn-success">modify</a>
+								<a href="?act=del&id=<%= custom[i].id %>" onclick="return confirm('delete?')" class="btn btn-danger">delete</a>
 							</td>
 						</tr>
 						<% } %>
@@ -85,9 +85,9 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="href" class="col-xs-2 control-label">href</label>
+						<label for="src" class="col-xs-2 control-label">src</label>
 						<div class="col-xs-10">
-							<input type="text" name="href" class="form-control" value="<%= mod_data[0].href %>">
+							<input type="file" name="src" class="form-control">
 						</div>
 					</div>
 					<div class="form-group">
