@@ -34,7 +34,7 @@
 					</div>
 					<div class="form-group">
 				    	<div class="col-sm-offset-2 col-sm-10">
-				     		 <button class="btn btn-default" type="submit">Add</button>
+				     		 <button class="btn btn-warning" type="submit">Add</button>
 				   		 </div>
 				 	</div>
 				</form>
@@ -56,10 +56,10 @@
 							<td><%= custom[i].id %></td>
 							<td><%= custom[i].title %></td>
 							<td><%= custom[i].description %></td>
-							<td><img src="/upload/<%= custom[i].src %>" /></td>
+							<td><img src="/upload/<%= custom[i].src %>" class="img-circle"  style="width: 40px" /></td>
 							<td>
 								<a href="?act=mod&id=<%= custom[i].id %>" class="btn btn-success">modify</a>
-								<a href="?act=del&id=<%= custom[i].id %>" onclick="return confirm('delete?')" class="btn btn-danger">delete</a>
+								<a href="?act=del&id=<%= custom[i].id %>&src=<%= custom[i].src %>" onclick="return confirm('delete?')" class="btn btn-danger">delete</a>
 							</td>
 						</tr>
 						<% } %>
@@ -70,8 +70,9 @@
 			<% if(typeof mod_data != 'undefined'){ %>
 			
 			<div class="form col-xs-offset-2 col-xs-8">
-				<form action="?" method="post" class="form-horizontal" role="form">
+				<form action="?" method="post" class="form-horizontal" enctype="multipart/form-data" role="form">
 					<input type="hidden" name="mod_id" value="<%= mod_data[0].id %>">
+					<input type="hidden" name="mod_src" value="<%= mod_data[0].src %>">
 					<div class="form-group">
 						<label for="title" class="col-xs-2 control-label">title</label>
 						<div class="col-xs-10">
